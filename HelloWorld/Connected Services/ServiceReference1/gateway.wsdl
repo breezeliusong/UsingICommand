@@ -1,0 +1,1747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetEmployees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCompanySignature" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesResult" type="tns:ArrayOfEmployeeDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmployeeDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmployeeDto" nillable="true" type="tns:EmployeeDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmployeeDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmploymentDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneCellular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneHome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WageForm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanySignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReportedSick" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneCellular2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ktdontprintorder" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ktsendorderbyemail" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stationplaceid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Systemuserid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Workingteamid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Vacationgroupid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Trafficareaid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPhoto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="IpPhoneAdress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPlannedDrivings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCompanySignature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pEmployeeSignature" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pFromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="pToDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlannedDrivingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlannedDrivingsResult" type="tns:ArrayOfPlannedDrivingDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlannedDrivingDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlannedDrivingDto" nillable="true" type="tns:PlannedDrivingDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlannedDrivingDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanySignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="DrivingID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="GarageStart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="GarageEnd" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BusNr" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderNr" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Route" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActivities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCompanySignature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pActivityCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActivitiesResult" type="tns:ArrayOfActivityDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfActivityDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActivityDto" nillable="true" type="tns:ActivityDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActivityDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mExternalId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ended" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" nillable="true" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanySignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SchemaId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternalInfo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAbsence" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAccumulators">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCompanySignature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pFromPeriod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pToPeriod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAccumulatorCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccumulatorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccumulatorsResult" type="tns:ArrayOfAccumulatorDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAccumulatorDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AccumulatorDto" nillable="true" type="tns:AccumulatorDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AccumulatorDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Period" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PeriodType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodeName" type="tns:AccumulatorCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="AccumulatorCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="OvertimeHoursYear" />
+          <s:enumeration value="WorkedHoursWeek" />
+          <s:enumeration value="WorkedHoursMonth" />
+          <s:enumeration value="FreedaysMonth" />
+          <s:enumeration value="FreeDaysYear" />
+          <s:enumeration value="WorkHoursMeasureMonth" />
+          <s:enumeration value="RemainingWorkHoursMonth" />
+          <s:enumeration value="DriveHoursWeek" />
+          <s:enumeration value="OtherWorkHoursWeek" />
+          <s:enumeration value="EstimatedHoursMonth" />
+          <s:enumeration value="EstimatedRemainingWorkHoursMonth" />
+          <s:enumeration value="CompBalanceHours" />
+          <s:enumeration value="FlexBalance" />
+          <s:enumeration value="WorkTimeReduction" />
+          <s:enumeration value="EstimatedRemainingWorkHoursDay" />
+          <s:enumeration value="VacationDaysYear" />
+          <s:enumeration value="WageWeek" />
+          <s:enumeration value="Other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetUpdatedAccumulators">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCompanySignature" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpdatedAccumulatorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpdatedAccumulatorsResult" type="tns:ArrayOfAccumulatorDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pActivityDto" type="tns:ActivityDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateActivityResult" type="tns:ArrayOfActivityResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfActivityResponseDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActivityResponseDto" nillable="true" type="tns:ActivityResponseDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActivityResponseDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseResponseDto" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateVacation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVacationDto" type="tns:VacationDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VacationDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateVacationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateVacationResult" type="tns:ArrayOfActivityResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSickness">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pSicknessDto" type="tns:SicknessDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SicknessDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Hours" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateSicknessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSicknessResult" type="tns:ArrayOfActivityResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTimereport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTimereportDto" type="tns:TimereportDto" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimereportDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Break1End" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Break1Start" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Break2End" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Break2Start" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Break3End" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Break3Start" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Break4End" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Break4Start" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ended" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OvertimeToBalance" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UndertimeFromBalance" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkedTimeTotal" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTimereportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTimereportResult" type="tns:ArrayOfTimereportResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTimereportResponseDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimereportResponseDto" nillable="true" type="tns:TimereportResponseDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimereportResponseDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreateTimereports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTimereportComposite" type="tns:ArrayOfTimereportComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTimereportComposite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimereportComposite" nillable="true" type="tns:TimereportComposite" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimereportComposite">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ended" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OvertimeToBalance" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UndertimeFromBalance" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Createdby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Breaks" type="tns:ArrayOfBreakDto" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimereportTasks" type="tns:ArrayOfTimereportTask" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthenticatedDto" type="tns:AuthenticatedDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBreakDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BreakDto" nillable="true" type="tns:BreakDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BreakDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Ended" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTimereportTask">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimereportTask" nillable="true" type="tns:TimereportTask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimereportTask">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Vehicleid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleNumber" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskTypeCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeterReadingStart" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeterReadingEnd" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AuthenticatedDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProviderUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProviderPwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerPwd" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTimereportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTimereportsResult" type="tns:ArrayOfTimereportResponseComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTimereportResponseComposite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimereportResponseComposite" nillable="true" type="tns:TimereportResponseComposite" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimereportResponseComposite">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateEmployeeWageAdditions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pEmployeeWageAddition" type="tns:ArrayOfEmployeeWageAddition" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmployeeWageAddition">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmployeeWageAddition" nillable="true" type="tns:EmployeeWageAddition" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmployeeWageAddition">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="WageNumberInPayroll" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitPrice" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateEmployeeWageAdditionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateEmployeeWageAdditionsResult" type="tns:ArrayOfEmployeeWageAdditionResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmployeeWageAdditionResponseDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmployeeWageAdditionResponseDto" nillable="true" type="tns:EmployeeWageAdditionResponseDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmployeeWageAdditionResponseDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreateTripNordic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTripNordicDto" type="tns:TripNordicDto" />
+            <s:element minOccurs="1" maxOccurs="1" name="sleptInTruck" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TripNordicDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ended" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTripNordicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTripNordicResult" type="tns:ArrayOfTripNordicResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTripNordicResponseDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TripNordicResponseDto" nillable="true" type="tns:TripNordicResponseDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TripNordicResponseDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreateTripInternational">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTripInternationalDto" type="tns:TripInternationalDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TripInternationalDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ended" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="KmWithCoDriver" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="KmWithSingleDriver" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfLoadingAndUnloadings" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Project" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTripInternationalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTripInternationalResult" type="tns:ArrayOfTripInternationalResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTripInternationalResponseDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TripInternationalResponseDto" nillable="true" type="tns:TripInternationalResponseDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TripInternationalResponseDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreateBorderCross">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pBorderCrossDto" type="tns:BorderCrossDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BorderCrossDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Timestamp" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleId" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateBorderCrossResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateBorderCrossResult" type="tns:ArrayOfBorderCrossResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBorderCrossResponseDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BorderCrossResponseDto" nillable="true" type="tns:BorderCrossResponseDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BorderCrossResponseDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreateVehicles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVehicles" type="tns:ArrayOfVehicleDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVehicleDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VehicleDto" nillable="true" type="tns:VehicleDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VehicleDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanySignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNotActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CostDistribution" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateVehiclesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateVehiclesResult" type="tns:ArrayOfVehicleResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVehicleResponseDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VehicleResponseDto" nillable="true" type="tns:VehicleResponseDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VehicleResponseDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreatePlannedDrivings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pPlannedDrivings" type="tns:ArrayOfPlannedDrivingDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePlannedDrivingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatePlannedDrivingsResult" type="tns:ArrayOfShiftResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShiftResponseDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShiftResponseDto" nillable="true" type="tns:ShiftResponseDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShiftResponseDto">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DriverId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DrivingId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CreateShifts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pShiftComposites" type="tns:ArrayOfShiftComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShiftComposite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShiftComposite" nillable="true" type="tns:ShiftComposite" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShiftComposite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ended" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShiftId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Breaks" type="tns:ArrayOfBreakDto" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShiftTasks" type="tns:ArrayOfShiftTaskDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfShiftTaskDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShiftTaskDto" nillable="true" type="tns:ShiftTaskDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShiftTaskDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Ended" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Started" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Vehicleid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskTypeCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateShiftsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateShiftsResult" type="tns:ArrayOfShiftResponseComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShiftResponseComposite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShiftResponseComposite" nillable="true" type="tns:ShiftResponseComposite" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShiftResponseComposite">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponseDto">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ExternalId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TotalTime" type="s:float" />
+              <s:element minOccurs="0" maxOccurs="1" name="ShiftId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CalculateShifts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pShiftComposites" type="tns:ArrayOfShiftComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateShiftsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateShiftsResult" type="tns:ArrayOfShiftResponseComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShifts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pShiftComposites" type="tns:ArrayOfShiftComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShiftsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateShiftsResult" type="tns:ArrayOfShiftResponseComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimereports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTimereportComposite" type="tns:ArrayOfTimereportComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimereportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTimereportsResult" type="tns:ArrayOfTimereportResponseComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVehicles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVehicleDto" type="tns:ArrayOfVehicleDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateVehiclesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateVehiclesResult" type="tns:ArrayOfVehicleResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlannedDrivings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pPlannedDrivings" type="tns:ArrayOfPlannedDrivingDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePlannedDrivingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePlannedDrivingsResult" type="tns:ArrayOfShiftResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteShifts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pShiftId" type="tns:ArrayOfDeletedShiftComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDeletedShiftComposite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DeletedShiftComposite" nillable="true" type="tns:DeletedShiftComposite" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeletedShiftComposite">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShiftID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteShiftsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteShiftsResult" type="tns:ArrayOfShiftResponseComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTimereports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pTimereportComposite" type="tns:ArrayOfTimereportComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTimereportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteTimereportsResult" type="tns:ArrayOfTimereportResponseComposite" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePlannedDrivings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pPlannedDrivings" type="tns:ArrayOfDeletedPlannedDrivingDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDeletedPlannedDrivingDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DeletedPlannedDrivingDto" nillable="true" type="tns:DeletedPlannedDrivingDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeletedPlannedDrivingDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanySignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="DrivingID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeletePlannedDrivingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletePlannedDrivingsResult" type="tns:ArrayOfShiftResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteVehiclesByVehicleNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pVehicleNumbers" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteVehiclesByVehicleNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteVehiclesByVehicleNumberResult" type="tns:ArrayOfVehicleResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteVehiclesByRegNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pRegnumbers" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteVehiclesByRegNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteVehiclesByRegNumberResult" type="tns:ArrayOfVehicleResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteVehiclesById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteVehiclesByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteVehiclesByIdResult" type="tns:ArrayOfVehicleResponseDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pProviderUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pProviderPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCustomerUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCustomerPwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployees" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlannedDrivingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlannedDrivings" />
+  </wsdl:message>
+  <wsdl:message name="GetPlannedDrivingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlannedDrivingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivities" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccumulatorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccumulators" />
+  </wsdl:message>
+  <wsdl:message name="GetAccumulatorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccumulatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedAccumulatorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUpdatedAccumulators" />
+  </wsdl:message>
+  <wsdl:message name="GetUpdatedAccumulatorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUpdatedAccumulatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateActivity" />
+  </wsdl:message>
+  <wsdl:message name="CreateActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateVacationSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateVacation" />
+  </wsdl:message>
+  <wsdl:message name="CreateVacationSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateVacationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSicknessSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSickness" />
+  </wsdl:message>
+  <wsdl:message name="CreateSicknessSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSicknessResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimereportSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTimereport" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimereportSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTimereportResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimereportsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTimereports" />
+  </wsdl:message>
+  <wsdl:message name="CreateTimereportsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTimereportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmployeeWageAdditionsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEmployeeWageAdditions" />
+  </wsdl:message>
+  <wsdl:message name="CreateEmployeeWageAdditionsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEmployeeWageAdditionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTripNordicSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTripNordic" />
+  </wsdl:message>
+  <wsdl:message name="CreateTripNordicSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTripNordicResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTripInternationalSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTripInternational" />
+  </wsdl:message>
+  <wsdl:message name="CreateTripInternationalSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTripInternationalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateBorderCrossSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBorderCross" />
+  </wsdl:message>
+  <wsdl:message name="CreateBorderCrossSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBorderCrossResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateVehiclesSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateVehicles" />
+  </wsdl:message>
+  <wsdl:message name="CreateVehiclesSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateVehiclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePlannedDrivingsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePlannedDrivings" />
+  </wsdl:message>
+  <wsdl:message name="CreatePlannedDrivingsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePlannedDrivingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateShiftsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateShifts" />
+  </wsdl:message>
+  <wsdl:message name="CreateShiftsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateShiftsSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateShifts" />
+  </wsdl:message>
+  <wsdl:message name="CalculateShiftsSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShiftsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateShifts" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShiftsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimereportsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTimereports" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimereportsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTimereportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehiclesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateVehicles" />
+  </wsdl:message>
+  <wsdl:message name="UpdateVehiclesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateVehiclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlannedDrivingsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePlannedDrivings" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePlannedDrivingsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePlannedDrivingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShiftsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteShifts" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShiftsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTimereportsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTimereports" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTimereportsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTimereportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePlannedDrivingsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePlannedDrivings" />
+  </wsdl:message>
+  <wsdl:message name="DeletePlannedDrivingsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePlannedDrivingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVehiclesByVehicleNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteVehiclesByVehicleNumber" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVehiclesByVehicleNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteVehiclesByVehicleNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVehiclesByRegNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteVehiclesByRegNumber" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVehiclesByRegNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteVehiclesByRegNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVehiclesByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteVehiclesById" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVehiclesByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteVehiclesByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GatewaySoap">
+    <wsdl:operation name="GetEmployees">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Xml string containing employee data. If the parameter pCompanySignature is empty, employees for all companies will be returned. The XML Data is returned in the format of the element type Employee.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeesSoapIn" />
+      <wsdl:output message="tns:GetEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlannedDrivings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Xml string containing plannedDriving data. If the parameter pCompanySignature is empty, plannedDriving for all companies will be returned. The XML Data is returned in the format of the element type PlannedDriving.</wsdl:documentation>
+      <wsdl:input message="tns:GetPlannedDrivingsSoapIn" />
+      <wsdl:output message="tns:GetPlannedDrivingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Xml string containing activity data. The XML Data is returned in the format of the element type Activity.</wsdl:documentation>
+      <wsdl:input message="tns:GetActivitiesSoapIn" />
+      <wsdl:output message="tns:GetActivitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccumulators">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Xml string containing accumulator data.</wsdl:documentation>
+      <wsdl:input message="tns:GetAccumulatorsSoapIn" />
+      <wsdl:output message="tns:GetAccumulatorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedAccumulators">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Xml string containing accumulator data.</wsdl:documentation>
+      <wsdl:input message="tns:GetUpdatedAccumulatorsSoapIn" />
+      <wsdl:output message="tns:GetUpdatedAccumulatorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates an activity.</wsdl:documentation>
+      <wsdl:input message="tns:CreateActivitySoapIn" />
+      <wsdl:output message="tns:CreateActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVacation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates an activity of type Vacation.</wsdl:documentation>
+      <wsdl:input message="tns:CreateVacationSoapIn" />
+      <wsdl:output message="tns:CreateVacationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSickness">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates an activity of type Sickness.</wsdl:documentation>
+      <wsdl:input message="tns:CreateSicknessSoapIn" />
+      <wsdl:output message="tns:CreateSicknessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimereport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a timereport.</wsdl:documentation>
+      <wsdl:input message="tns:CreateTimereportSoapIn" />
+      <wsdl:output message="tns:CreateTimereportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimereports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a timereport with more than one vehicle</wsdl:documentation>
+      <wsdl:input message="tns:CreateTimereportsSoapIn" />
+      <wsdl:output message="tns:CreateTimereportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployeeWageAdditions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a employeewageaddition</wsdl:documentation>
+      <wsdl:input message="tns:CreateEmployeeWageAdditionsSoapIn" />
+      <wsdl:output message="tns:CreateEmployeeWageAdditionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTripNordic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a trip.</wsdl:documentation>
+      <wsdl:input message="tns:CreateTripNordicSoapIn" />
+      <wsdl:output message="tns:CreateTripNordicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTripInternational">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create a TripInternational.</wsdl:documentation>
+      <wsdl:input message="tns:CreateTripInternationalSoapIn" />
+      <wsdl:output message="tns:CreateTripInternationalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBorderCross">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a Border Cross activity.</wsdl:documentation>
+      <wsdl:input message="tns:CreateBorderCrossSoapIn" />
+      <wsdl:output message="tns:CreateBorderCrossSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVehicles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates vehicles. Returns vehiclenumbers for all created vehicles</wsdl:documentation>
+      <wsdl:input message="tns:CreateVehiclesSoapIn" />
+      <wsdl:output message="tns:CreateVehiclesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlannedDrivings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create shifts based on planned drivings. Returns drivingId and driverID</wsdl:documentation>
+      <wsdl:input message="tns:CreatePlannedDrivingsSoapIn" />
+      <wsdl:output message="tns:CreatePlannedDrivingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateShifts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates shifts. Returns the total planned worktime for each shift. ShiftId is left empty</wsdl:documentation>
+      <wsdl:input message="tns:CreateShiftsSoapIn" />
+      <wsdl:output message="tns:CreateShiftsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateShifts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculate total time of shifts. Returns the total planned worktime for each shift</wsdl:documentation>
+      <wsdl:input message="tns:CalculateShiftsSoapIn" />
+      <wsdl:output message="tns:CalculateShiftsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShifts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates shifts. Returns the total planned worktime for each shift. ShiftId is used as identifier.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateShiftsSoapIn" />
+      <wsdl:output message="tns:UpdateShiftsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimereports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a timereport. Timereportid is used as identifier.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateTimereportsSoapIn" />
+      <wsdl:output message="tns:UpdateTimereportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update vehicles. Returns vehiclenumber for all updated vehicles</wsdl:documentation>
+      <wsdl:input message="tns:UpdateVehiclesSoapIn" />
+      <wsdl:output message="tns:UpdateVehiclesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlannedDrivings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update all shifts based on planned drivings. Returns id's for all updated shifts</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePlannedDrivingsSoapIn" />
+      <wsdl:output message="tns:UpdatePlannedDrivingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShifts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete shifts. Returns 0.0 as the total planned worktime for each shift</wsdl:documentation>
+      <wsdl:input message="tns:DeleteShiftsSoapIn" />
+      <wsdl:output message="tns:DeleteShiftsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTimereports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a timereport. Timereportid is used as identifier.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteTimereportsSoapIn" />
+      <wsdl:output message="tns:DeleteTimereportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlannedDrivings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete planned drivings</wsdl:documentation>
+      <wsdl:input message="tns:DeletePlannedDrivingsSoapIn" />
+      <wsdl:output message="tns:DeletePlannedDrivingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesByVehicleNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete vehicles by vehiclenumbers</wsdl:documentation>
+      <wsdl:input message="tns:DeleteVehiclesByVehicleNumberSoapIn" />
+      <wsdl:output message="tns:DeleteVehiclesByVehicleNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesByRegNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete vehicles by registration number</wsdl:documentation>
+      <wsdl:input message="tns:DeleteVehiclesByRegNumberSoapIn" />
+      <wsdl:output message="tns:DeleteVehiclesByRegNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete vehicles by id</wsdl:documentation>
+      <wsdl:input message="tns:DeleteVehiclesByIdSoapIn" />
+      <wsdl:output message="tns:DeleteVehiclesByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Authentication</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateSoapIn" />
+      <wsdl:output message="tns:AuthenticateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GatewaySoap" type="tns:GatewaySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployees">
+      <soap:operation soapAction="http://tempuri.org/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlannedDrivings">
+      <soap:operation soapAction="http://tempuri.org/GetPlannedDrivings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <soap:operation soapAction="http://tempuri.org/GetActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccumulators">
+      <soap:operation soapAction="http://tempuri.org/GetAccumulators" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedAccumulators">
+      <soap:operation soapAction="http://tempuri.org/GetUpdatedAccumulators" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivity">
+      <soap:operation soapAction="http://tempuri.org/CreateActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVacation">
+      <soap:operation soapAction="http://tempuri.org/CreateVacation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSickness">
+      <soap:operation soapAction="http://tempuri.org/CreateSickness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimereport">
+      <soap:operation soapAction="http://tempuri.org/CreateTimereport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimereports">
+      <soap:operation soapAction="http://tempuri.org/CreateTimereports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployeeWageAdditions">
+      <soap:operation soapAction="http://tempuri.org/CreateEmployeeWageAdditions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTripNordic">
+      <soap:operation soapAction="http://tempuri.org/CreateTripNordic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTripInternational">
+      <soap:operation soapAction="http://tempuri.org/CreateTripInternational" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBorderCross">
+      <soap:operation soapAction="http://tempuri.org/CreateBorderCross" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVehicles">
+      <soap:operation soapAction="http://tempuri.org/CreateVehicles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlannedDrivings">
+      <soap:operation soapAction="http://tempuri.org/CreatePlannedDrivings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateShifts">
+      <soap:operation soapAction="http://tempuri.org/CreateShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateShifts">
+      <soap:operation soapAction="http://tempuri.org/CalculateShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShifts">
+      <soap:operation soapAction="http://tempuri.org/UpdateShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimereports">
+      <soap:operation soapAction="http://tempuri.org/UpdateTimereports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicles">
+      <soap:operation soapAction="http://tempuri.org/UpdateVehicles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlannedDrivings">
+      <soap:operation soapAction="http://tempuri.org/UpdatePlannedDrivings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShifts">
+      <soap:operation soapAction="http://tempuri.org/DeleteShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTimereports">
+      <soap:operation soapAction="http://tempuri.org/DeleteTimereports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlannedDrivings">
+      <soap:operation soapAction="http://tempuri.org/DeletePlannedDrivings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesByVehicleNumber">
+      <soap:operation soapAction="http://tempuri.org/DeleteVehiclesByVehicleNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesByRegNumber">
+      <soap:operation soapAction="http://tempuri.org/DeleteVehiclesByRegNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesById">
+      <soap:operation soapAction="http://tempuri.org/DeleteVehiclesById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GatewaySoap12" type="tns:GatewaySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployees">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlannedDrivings">
+      <soap12:operation soapAction="http://tempuri.org/GetPlannedDrivings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <soap12:operation soapAction="http://tempuri.org/GetActivities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccumulators">
+      <soap12:operation soapAction="http://tempuri.org/GetAccumulators" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedAccumulators">
+      <soap12:operation soapAction="http://tempuri.org/GetUpdatedAccumulators" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivity">
+      <soap12:operation soapAction="http://tempuri.org/CreateActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVacation">
+      <soap12:operation soapAction="http://tempuri.org/CreateVacation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSickness">
+      <soap12:operation soapAction="http://tempuri.org/CreateSickness" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimereport">
+      <soap12:operation soapAction="http://tempuri.org/CreateTimereport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTimereports">
+      <soap12:operation soapAction="http://tempuri.org/CreateTimereports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateEmployeeWageAdditions">
+      <soap12:operation soapAction="http://tempuri.org/CreateEmployeeWageAdditions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTripNordic">
+      <soap12:operation soapAction="http://tempuri.org/CreateTripNordic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTripInternational">
+      <soap12:operation soapAction="http://tempuri.org/CreateTripInternational" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBorderCross">
+      <soap12:operation soapAction="http://tempuri.org/CreateBorderCross" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVehicles">
+      <soap12:operation soapAction="http://tempuri.org/CreateVehicles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePlannedDrivings">
+      <soap12:operation soapAction="http://tempuri.org/CreatePlannedDrivings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateShifts">
+      <soap12:operation soapAction="http://tempuri.org/CreateShifts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateShifts">
+      <soap12:operation soapAction="http://tempuri.org/CalculateShifts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShifts">
+      <soap12:operation soapAction="http://tempuri.org/UpdateShifts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimereports">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTimereports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicles">
+      <soap12:operation soapAction="http://tempuri.org/UpdateVehicles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlannedDrivings">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePlannedDrivings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShifts">
+      <soap12:operation soapAction="http://tempuri.org/DeleteShifts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTimereports">
+      <soap12:operation soapAction="http://tempuri.org/DeleteTimereports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlannedDrivings">
+      <soap12:operation soapAction="http://tempuri.org/DeletePlannedDrivings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesByVehicleNumber">
+      <soap12:operation soapAction="http://tempuri.org/DeleteVehiclesByVehicleNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesByRegNumber">
+      <soap12:operation soapAction="http://tempuri.org/DeleteVehiclesByRegNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehiclesById">
+      <soap12:operation soapAction="http://tempuri.org/DeleteVehiclesById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://tempuri.org/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Gateway">
+    <wsdl:port name="GatewaySoap" binding="tns:GatewaySoap">
+      <soap:address location="http://www.transpalive.se/transpawebserviceslive/gateway.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GatewaySoap12" binding="tns:GatewaySoap12">
+      <soap12:address location="http://www.transpalive.se/transpawebserviceslive/gateway.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

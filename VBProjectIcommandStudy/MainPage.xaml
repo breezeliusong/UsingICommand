@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="VBProjectIcommandStudy.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VBProjectIcommandStudy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView Name="AliasValuesList" ItemsSource="{Binding AliasValues, Mode=TwoWay}" Margin="0,0,0,0" IsItemClickEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="0,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Text="{Binding MyAliasValue, Mode=TwoWay}" Grid.Row="0" Grid.Column="0" />
+                        <Button Name="RemoveAlias" Tag="{Binding Id}" Content="Remove" Grid.Row="0" Grid.Column="1" Command="{Binding Path=AddAliasCommand}" CommandParameter="{Binding ElementName=RemoveAlias}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="AddAlias" Content="Add Alias" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Command="{Binding Path=AddAliasCommand}" CommandParameter="{Binding ElementName=AddAlias}"/>
+    </StackPanel>
+</Page>
