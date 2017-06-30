@@ -63,7 +63,8 @@ namespace HelloWorld
             }
             else
             {
-                AliasValues.RemoveAt((int)param.Tag);
+                //add judgement 
+                AliasValues.RemoveAt((int)param.Tag);// this place should pay attention to, if you delete the first and then delete the last one the item is fault.
             }
 
         }
