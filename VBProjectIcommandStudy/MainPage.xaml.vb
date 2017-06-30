@@ -159,10 +159,6 @@ Public Class MyAddAliasCommand
         _canExecute = canExecute
     End Sub
 
-    'Public Function CanExecute(parameter As Object) As Boolean
-    '    Return _canExecute
-    'End Function
-
     Public Sub Execute(parameter As Object)
         _action(parameter)
     End Sub
