@@ -21,7 +21,7 @@
                             <ColumnDefinition Width="70"/>
                         </Grid.ColumnDefinitions>
                         <TextBox Text="{Binding MyAliasValue, Mode=TwoWay}" Grid.Row="0" Grid.Column="0" />
-                        <Button Name="RemoveAlias" Content="Remove" Grid.Row="0" Grid.Column="1" Command="{Binding Path=RemoveAliasCommand}" CommandParameter="{Binding ElementName=RemoveAlias}" />
+                        <Button Name="RemoveAlias" Tag="{Binding Id}" Content="Remove" Grid.Row="0" Grid.Column="1" Click="RemoveAlias_Click" Command="{Binding Path=RemoveAlias_Click}" CommandParameter="{Binding ElementName=RemoveAlias}" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

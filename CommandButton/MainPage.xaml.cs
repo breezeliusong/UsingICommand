@@ -27,6 +27,32 @@ namespace CommandButton
     {
         public ObservableCollection<ChildClass> myList { get; set; }
         public ChildClass child { get; set; }
+        public ICommand RemoveAliasCommand
+        {
+            get
+            {
+                return new MyAddCommand(s => { this.RemoveChildren(s as Button); }, true);
+            }
+        }
+
+        private void RemoveChildren(Button button)
+        {
+            Debug.WriteLine("remove");
+        }
+
+        public ICommand AddAliasCommand
+        {
+            get
+            {
+                return new MyAddCommand(s => { this.AddChildren(s as Button); }, true);
+            }
+        }
+
+        private void AddChildren(Button button)
+        {
+            Debug.WriteLine("Add");
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -34,7 +60,11 @@ namespace CommandButton
             myList = parent.AliasValues;
             child = new ChildClass();
             this.DataContext = this;
-            AddAlias.DataContext = child;
+        }
+
+        private void RemoveAlias_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 
@@ -67,21 +97,21 @@ namespace CommandButton
 
     public class ChildClass
     {
-        public ICommand AddAliasCommand
-        {
-            get
-            {
-                return new MyAddCommand(s => { ParentClass.AddChildren(s as Button); }, true);
-            }
-        }
+        //public ICommand AddAliasCommand
+        //{
+        //    get
+        //    {
+        //        return new MyAddCommand(s => { ParentClass.AddChildren(s as Button); }, true);
+        //    }
+        //}
 
-        public ICommand RemoveAliasCommand
-        {
-            get
-            {
-                return new MyAddCommand(s => { ParentClass.RemoveChildren(s as Button); }, true);
-            }
-        }
+        //public ICommand RemoveAliasCommand
+        //{
+        //    get
+        //    {
+        //        return new MyAddCommand(s => { ParentClass.RemoveChildren(s as Button); }, true);
+        //    }
+        //}
 
 
         public string Id { get; set; }
